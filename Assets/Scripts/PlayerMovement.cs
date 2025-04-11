@@ -1,0 +1,88 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[RequireComponent(typeof(Rigidbody))]
+public class PlayerMovement : MonoBehaviour
+{
+    [Header("Movement Settings")]
+    [SerializeField] float moveSpeed = 5f;
+    [SerializeField] float rotationSpeed = 10f;
+    [SerializeField] float acceleration = 15f;
+    [SerializeField] float deceleration = 20f;
+    [SerializeField] float maxSpeed = 7f;
+
+    [Header("References")]
+    [SerializeField] Camera playerCamera;
+    [SerializeField] LayerMask groundLayer;
+
+    Rigidbody rb;
+    Vector3 movement;
+    Vector3 targetVelocity;
+    Plane groundPlane;
+
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+        rb.interpolation = RigidbodyInterpolation.Interpolate;
+        rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
+        groundPlane = new Plane(Vector3.up, Vector3.zero);
+    }
+
+    void Update()
+    {
+        HandleRotation();
+    }
+
+    void FixedUpdate()
+    {
+        HandleMovement();
+    }
+
+    void HandleMovement()
+    {
+        Vector3 input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+
+        // Ќаправление движени€ относительно камеры
+        Vector3 cameraForward = playerCamera.transform.forward;
+        Vector3 cameraRight = playerCamera.transform.right;
+        cameraForward.y = 0f;
+        cameraRight.y = 0f;
+        cameraForward.Normalize();
+        cameraRight.Normalize();
+
+        // –ассчитываем целевую скорость
+        Vector3 desiredDirection = cameraForward * input.z + cameraRight * input.x;
+        targetVelocity = Vector3.MoveTowards(
+            targetVelocity,
+            desiredDirection * maxSpeed,
+            (desiredDirection.magnitude > 0.1f ? acceleration : deceleration) * Time.fixedDeltaTime);
+
+        // ѕримен€ем движение
+        rb.velocity = new Vector3(
+            targetVelocity.x,
+            rb.velocity.y, // —охран€ем вертикальную скорость дл€ гравитации
+            targetVelocity.z
+        );
+
+    }
+
+    void HandleRotation()
+    {
+        Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit hit, 100f, groundLayer))
+        {
+            Vector3 lookDirection = hit.point - transform.position;
+            lookDirection.y = 0;
+
+            // ѕлавный поворот с ограничением угловой скорости
+            float angleDiff = Vector3.SignedAngle(transform.forward, lookDirection, Vector3.up);
+            float rotationStep = Mathf.Sign(angleDiff) * Mathf.Min(
+                Mathf.Abs(angleDiff),
+                rotationSpeed * Time.deltaTime
+            );
+
+            rb.MoveRotation(rb.rotation * Quaternion.Euler(0, rotationStep, 0));
+        }
+    }
+}
