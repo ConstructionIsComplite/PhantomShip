@@ -17,6 +17,11 @@ public abstract class EnemyBase : MonoBehaviour
     [SerializeField] protected Transform[] patrolPoints;
     [SerializeField] protected float waypointTolerance = 1f;
 
+    [Header("Optimization")]
+    [SerializeField] float visionUpdateInterval = 0.3f;
+
+    private float visionUpdateTimer;
+
     protected NavMeshAgent agent;
     protected Transform player;
     protected Health playerHealth;
@@ -40,6 +45,13 @@ public abstract class EnemyBase : MonoBehaviour
 
     protected virtual void Update()
     {
+        visionUpdateTimer -= Time.deltaTime;
+        if (visionUpdateTimer <= 0)
+        {
+            UpdateStateTransitions();
+            visionUpdateTimer = visionUpdateInterval;
+        }
+
         switch (currentState)
         {
             case AIState.Patrol:
@@ -64,13 +76,13 @@ public abstract class EnemyBase : MonoBehaviour
         {
             currentState = AIState.Chase;
             lastKnownPosition = player.position;
-            searchTimer = 0f;
+            searchTimer = searchTime; // Сброс таймера поиска
         }
         else if (currentState == AIState.Chase)
         {
+            // Немедленный переход в поиск если потерян LOS
             currentState = AIState.Search;
             agent.SetDestination(lastKnownPosition);
-            searchTimer = searchTime;
         }
     }
 
@@ -79,15 +91,27 @@ public abstract class EnemyBase : MonoBehaviour
         Vector3 directionToPlayer = player.position - transform.position;
         float distanceToPlayer = directionToPlayer.magnitude;
 
+        // Проверка расстояния и угла
         if (distanceToPlayer > visionRadius) return false;
 
         float angleToPlayer = Vector3.Angle(transform.forward, directionToPlayer);
-        if (angleToPlayer > visionAngle / 2) return false;
+        if (angleToPlayer > visionAngle * 0.5f) return false;
 
-        if (Physics.Raycast(transform.position, directionToPlayer.normalized,
-            out RaycastHit hit, visionRadius, ~obstacleMask))
+        // Многоточечный Raycast
+        Vector3[] checkPoints = {
+        player.position, // Центральная точка
+        player.position + Vector3.up * 0.5f, // Голова
+        player.position - Vector3.up * 0.2f  // Ноги
+    };
+
+        foreach (Vector3 point in checkPoints)
         {
-            return hit.transform.CompareTag("Player");
+            Vector3 dirToPoint = point - transform.position;
+            if (Physics.Raycast(transform.position, dirToPoint.normalized,
+                out RaycastHit hit, visionRadius, obstacleMask | targetMask))
+            {
+                if (hit.transform.CompareTag("Player")) return true;
+            }
         }
         return false;
     }

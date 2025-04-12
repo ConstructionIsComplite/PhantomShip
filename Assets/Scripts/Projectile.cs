@@ -83,15 +83,8 @@ public class Projectile : MonoBehaviour
             rb.position = newPosition;
         }
     }
+
     /*
-
-    void OnCollisionEnter(Collision collision)
-    {
-        ProcessCollision(collision);
-        Destroy(gameObject);
-    }
-    */
-
     void OnTriggerEnter(Collider other)
     {
         // Нанесение урона
@@ -102,13 +95,30 @@ public class Projectile : MonoBehaviour
         ProcessCollision(other.gameObject);
         Destroy(gameObject);
     }
+    */
+
+    void OnCollisionEnter(Collision collision)
+    {
+        ContactPoint contact = collision.contacts[0];
+        SpawnImpactEffect(contact.point, contact.normal);
+
+        // Полностью отключаем физику снаряда
+        rb.isKinematic = true;
+        rb.detectCollisions = false;
+
+        TryDamageTarget(collision.gameObject);
+        Destroy(gameObject);
+    }
+
+    /*
 
     void ProcessCollision(GameObject target)
     {
         SpawnImpactEffect(target.transform.position); // Передаём позицию цели
         TryDamageTarget(target);
     }
-
+    */
+    /*
     void SpawnImpactEffect(Vector3 position) 
     {
         if (!impactEffect) return;
@@ -117,6 +127,18 @@ public class Projectile : MonoBehaviour
             impactEffect,
             position, // Используем позицию столкновения
             Quaternion.identity
+        );
+    }
+    */
+
+    void SpawnImpactEffect(Vector3 position, Vector3 normal)
+    {
+        if (!impactEffect) return;
+
+        Instantiate(
+            impactEffect,
+            position,
+            Quaternion.LookRotation(normal) // Используем переданную нормаль
         );
     }
 

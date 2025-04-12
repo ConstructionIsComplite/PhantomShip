@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,10 +8,17 @@ public class TimeManager : MonoBehaviour
     public static TimeManager Instance { get; private set; }
 
     [Header("Time Settings")]
-    [Range(0.01f, 1f)]
-    [SerializeField] float globalTimeScale = 1f;
+    [SerializeField][Range(0.01f, 1f)] float initialTimeScale = 1f;
+    [SerializeField][Range(0f, 0.1f)] float slowDownRate = 0.01f;
+    [SerializeField][Range(0.01f, 1f)] float minTimeScale = 0.1f;
 
-    public float TimeScale => globalTimeScale;
+    private float currentTimeScale;
+
+    public event Action<float> OnTimeScaleChanged; // Событие изменения времени
+
+    public float InitialTimeScale => initialTimeScale;
+    public float MinTimeScale => minTimeScale;
+    public float CurrentTimeScale => currentTimeScale;
 
     void Awake()
     {
@@ -18,6 +26,7 @@ public class TimeManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            InitializeTime();
         }
         else
         {
@@ -25,14 +34,39 @@ public class TimeManager : MonoBehaviour
         }
     }
 
-    void Update()
+    void InitializeTime()
     {
-        Time.timeScale = globalTimeScale;
-        Time.fixedDeltaTime = 0.02f * globalTimeScale;
+        currentTimeScale = initialTimeScale;
+        UpdateTimeScale();
     }
 
+    void Update()
+    {
+        if (currentTimeScale > minTimeScale)
+        {
+            currentTimeScale -= slowDownRate * Time.unscaledDeltaTime;
+            currentTimeScale = Mathf.Clamp(currentTimeScale, minTimeScale, initialTimeScale);
+            UpdateTimeScale();
+        }
+    }
+
+    void UpdateTimeScale()
+    {
+        Time.timeScale = currentTimeScale;
+        Time.fixedDeltaTime = 0.02f * currentTimeScale;
+        OnTimeScaleChanged?.Invoke(currentTimeScale); // Вызов события
+    }
+
+    public void ResetTimeScale()
+    {
+        currentTimeScale = initialTimeScale;
+        UpdateTimeScale();
+    }
+
+    // Для ручного управления при необходимости
     public void SetTimeScale(float newScale)
     {
-        globalTimeScale = Mathf.Clamp(newScale, 0.01f, 1f);
+        currentTimeScale = Mathf.Clamp(newScale, minTimeScale, initialTimeScale);
+        UpdateTimeScale();
     }
 }
