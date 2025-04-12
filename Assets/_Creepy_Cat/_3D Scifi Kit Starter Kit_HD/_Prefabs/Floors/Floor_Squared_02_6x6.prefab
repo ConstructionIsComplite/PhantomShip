@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 3333726}
   - component: {fileID: 2333726}
   - component: {fileID: 6533726}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor_Squared_02_6x6
   m_TagString: Untagged
   m_Icon: {fileID: 0}

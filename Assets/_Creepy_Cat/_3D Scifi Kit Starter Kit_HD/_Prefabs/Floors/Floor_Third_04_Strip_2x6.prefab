@@ -44,6 +44,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Third_04_Strip_2x6
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c444eb571ed434e0cae793175b76dcf4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c444eb571ed434e0cae793175b76dcf4, type: 3}
       propertyPath: m_RootOrder
       value: 0

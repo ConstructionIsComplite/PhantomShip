@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 3311384}
   - component: {fileID: 2330300}
   - component: {fileID: 6542830}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor_Angle_01_6x6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -326,7 +326,7 @@ GameObject:
   - component: {fileID: 3335812}
   - component: {fileID: 2343610}
   - component: {fileID: 6547806}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor_Angle_01_6x6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -597,7 +597,7 @@ GameObject:
   - component: {fileID: 3333360}
   - component: {fileID: 2370070}
   - component: {fileID: 6578118}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor_Squared_01_6x6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -833,7 +833,7 @@ GameObject:
   - component: {fileID: 3366344}
   - component: {fileID: 2333130}
   - component: {fileID: 6564734}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor_Squared_02_6x6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1106,7 +1106,7 @@ GameObject:
   - component: {fileID: 3388742}
   - component: {fileID: 2332360}
   - component: {fileID: 6519412}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor_Angle_01_6x6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1308,7 +1308,7 @@ GameObject:
   - component: {fileID: 3364482}
   - component: {fileID: 2312064}
   - component: {fileID: 6575240}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor_Squared_01_6x6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1413,7 +1413,7 @@ GameObject:
   - component: {fileID: 3335818}
   - component: {fileID: 2344544}
   - component: {fileID: 6556390}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor_Squared_01_6x6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1550,7 +1550,7 @@ GameObject:
   - component: {fileID: 3341876}
   - component: {fileID: 2326924}
   - component: {fileID: 6581040}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor_Angle_01_6x6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1655,7 +1655,7 @@ GameObject:
   - component: {fileID: 3351702}
   - component: {fileID: 2356142}
   - component: {fileID: 6579202}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor_Squared_01_6x6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
