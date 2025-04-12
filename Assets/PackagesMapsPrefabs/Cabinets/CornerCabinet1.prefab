@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4104981373415417541}
   - component: {fileID: 2239174700243980815}
   - component: {fileID: -1839750421582097598}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CornerCabinet1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

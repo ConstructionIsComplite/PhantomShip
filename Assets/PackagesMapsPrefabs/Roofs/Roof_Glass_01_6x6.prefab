@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 474902}
   - component: {fileID: 3374904}
   - component: {fileID: 2374904}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Roof_Glass_01_6x6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 474904}
   - component: {fileID: 3374902}
   - component: {fileID: 2374902}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 497138}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Roof_Glass_01_6x6
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 400000}
   - component: {fileID: 3300000}
   - component: {fileID: 2300000}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall_Simple_01_Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 400002}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall_Simple_01_Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,7 +142,7 @@ GameObject:
   m_Component:
   - component: {fileID: 400004}
   - component: {fileID: 10800000}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light_Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 400006}
   - component: {fileID: 10800002}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light_Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -330,7 +330,7 @@ GameObject:
   m_Component:
   - component: {fileID: 453906}
   - component: {fileID: 6553906}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collider_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -383,7 +383,7 @@ GameObject:
   m_Component:
   - component: {fileID: 453908}
   - component: {fileID: 6553908}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collider_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -436,7 +436,7 @@ GameObject:
   m_Component:
   - component: {fileID: 458440}
   - component: {fileID: 6558440}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collider_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -489,7 +489,7 @@ GameObject:
   m_Component:
   - component: {fileID: 458434}
   - component: {fileID: 6558434}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collider_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -542,7 +542,7 @@ GameObject:
   m_Component:
   - component: {fileID: 458436}
   - component: {fileID: 6558436}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collider_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -595,7 +595,7 @@ GameObject:
   m_Component:
   - component: {fileID: 458438}
   - component: {fileID: 6558438}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collider_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -648,7 +648,7 @@ GameObject:
   m_Component:
   - component: {fileID: 458442}
   - component: {fileID: 6558442}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collider_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -701,7 +701,7 @@ GameObject:
   m_Component:
   - component: {fileID: 458444}
   - component: {fileID: 6558444}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collider_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -754,7 +754,7 @@ GameObject:
   m_Component:
   - component: {fileID: 458446}
   - component: {fileID: 6558446}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collider_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -807,7 +807,7 @@ GameObject:
   m_Component:
   - component: {fileID: 490516}
   - component: {fileID: 6590516}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collider_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -860,7 +860,7 @@ GameObject:
   m_Component:
   - component: {fileID: 490518}
   - component: {fileID: 6590518}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collider_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -913,7 +913,7 @@ GameObject:
   m_Component:
   - component: {fileID: 490520}
   - component: {fileID: 6590520}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collider_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -966,7 +966,7 @@ GameObject:
   m_Component:
   - component: {fileID: 490522}
   - component: {fileID: 6590522}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collider_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1019,7 +1019,7 @@ GameObject:
   m_Component:
   - component: {fileID: 490524}
   - component: {fileID: 6590524}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collider_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1072,7 +1072,7 @@ GameObject:
   m_Component:
   - component: {fileID: 490526}
   - component: {fileID: 6590526}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collider_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

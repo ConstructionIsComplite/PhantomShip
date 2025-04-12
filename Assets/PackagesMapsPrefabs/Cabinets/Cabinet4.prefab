@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 6806944044088807053}
   - component: {fileID: 8760601624177490503}
   - component: {fileID: -4757130039040568593}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cabinet4
   m_TagString: Untagged
   m_Icon: {fileID: 0}

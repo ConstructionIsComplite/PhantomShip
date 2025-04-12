@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 400000}
   - component: {fileID: 3300000}
   - component: {fileID: 2300000}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall_Cube_01_Round
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 400002}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall_Cube_01_Round
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 414282}
   - component: {fileID: 6514282}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collider_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,7 +185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 414284}
   - component: {fileID: 6514284}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collider_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,7 +238,7 @@ GameObject:
   m_Component:
   - component: {fileID: 414286}
   - component: {fileID: 6514286}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collider_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,7 +291,7 @@ GameObject:
   m_Component:
   - component: {fileID: 414288}
   - component: {fileID: 6514288}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collider_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -344,7 +344,7 @@ GameObject:
   m_Component:
   - component: {fileID: 414290}
   - component: {fileID: 6514290}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collider_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

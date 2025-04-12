@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 400000}
   - component: {fileID: 3300000}
   - component: {fileID: 2300000}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall_Down_01_Long
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 400002}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall_Down_01_Long_0.5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 400004}
   - component: {fileID: 10800000}
   - component: {fileID: 616578273538551534}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light_Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -252,7 +252,7 @@ GameObject:
   - component: {fileID: 400006}
   - component: {fileID: 10800002}
   - component: {fileID: 6450423840536994495}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light_Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,7 +369,7 @@ GameObject:
   m_Component:
   - component: {fileID: 417140}
   - component: {fileID: 6517140}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collider_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -422,7 +422,7 @@ GameObject:
   m_Component:
   - component: {fileID: 417142}
   - component: {fileID: 6517142}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collider_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -475,7 +475,7 @@ GameObject:
   m_Component:
   - component: {fileID: 417138}
   - component: {fileID: 6517138}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collider_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
