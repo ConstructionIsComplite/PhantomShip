@@ -468,9 +468,24 @@ MonoBehaviour:
     type: 3}
   fireRate: 0.2
   projectileSpeed: 25
-  maxShootDistance: 100
-  maxAmmo: 30
+  maxMagazine: 30
+  maxTotalAmmo: 150
   reloadTime: 1.5
+  OnMagazineChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTotalAmmoChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnReloadProgressChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnReloadStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnReloadComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5041632558993360443
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,7 +794,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 1
 --- !u!136 &5292513535335570044
 CapsuleCollider:
