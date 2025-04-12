@@ -744,9 +744,10 @@ GameObject:
   - component: {fileID: 3172442193404306559}
   - component: {fileID: 5292513535335570044}
   - component: {fileID: 6969767227218732777}
-  m_Layer: 0
+  - component: {fileID: 6764133578713490003}
+  m_Layer: 11
   m_Name: PlayerModel
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -831,12 +832,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a252ab57d7c6c94480361e84e794008, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 7
+  moveSpeed: 10
   rotationSpeed: 400
   acceleration: 50
   deceleration: 50
-  maxSpeed: 8
+  maxSpeed: 11
   playerCamera: {fileID: 4816208713551031129}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  currentVelocity: {x: 0, y: 0, z: 0}
+--- !u!114 &6764133578713490003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9169496139024461797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5479d2b42bc67194d9ea6a94ae45d48a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  destroyOnDeath: 1
+  deathEffect: {fileID: 0}

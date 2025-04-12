@@ -16,6 +16,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Camera playerCamera;
     [SerializeField] LayerMask groundLayer;
 
+    [Header("Debug")]
+    [SerializeField] Vector3 currentVelocity; // Для визуализации в инспекторе
+
+    public Vector3 CurrentVelocity => rb.velocity;
+
     Rigidbody rb;
     Vector3 movement;
     Vector3 targetVelocity;
@@ -36,6 +41,8 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        HandleMovement();
+        currentVelocity = rb.velocity; // Обновляем для отладки
         HandleMovement();
     }
 

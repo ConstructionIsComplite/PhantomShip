@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 1799967761675866478}
   - component: {fileID: 6878583749649508667}
   - component: {fileID: 9097702960679586736}
-  m_Layer: 10
-  m_Name: TestProjectile
+  m_Layer: 12
+  m_Name: TestEnemyProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,6 +153,6 @@ MonoBehaviour:
   damage: 10
   damageLayers:
     serializedVersion: 2
-    m_Bits: 384
+    m_Bits: 2176
   impactEffect: {fileID: 2608564611163780605, guid: 5d8346fbb3509594fb4f6087a228d017,
     type: 3}
