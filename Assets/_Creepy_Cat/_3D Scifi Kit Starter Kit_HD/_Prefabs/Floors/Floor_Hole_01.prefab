@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 413664}
   - component: {fileID: 3313664}
   - component: {fileID: 2313664}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor_Hole_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
