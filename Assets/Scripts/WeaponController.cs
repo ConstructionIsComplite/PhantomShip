@@ -138,4 +138,10 @@ public class WeaponController : MonoBehaviour
         OnMagazineChanged?.Invoke(currentMagazine);
         OnTotalAmmoChanged?.Invoke(currentTotalAmmo);
     }
+
+    public void AddAmmo(int amount)
+    {
+        currentTotalAmmo = Mathf.Min(currentTotalAmmo + amount, maxTotalAmmo);
+        UpdateAmmoUI();
+    }
 }

@@ -33,4 +33,9 @@ public class Health : MonoBehaviour
         else
             gameObject.SetActive(false);
     }
+
+    public void Heal(int amount)
+    {
+        currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
+    }
 }
