@@ -16,7 +16,10 @@ public class Health : MonoBehaviour
     [Header("UI References")]
     [SerializeField] Slider healthSlider;
     [SerializeField] TMP_Text healthText;
-    
+
+    [Header("Animation")]
+    [SerializeField] Animator animator;
+
     [SerializeField]
     private int currentHealth;
 
@@ -52,6 +55,7 @@ public class Health : MonoBehaviour
 
         if (isPlayer)
         {
+            animator.SetTrigger("Death");
             GameManager.Instance.TriggerGameOver("YOUR HEALTH REACHED ZERO");
         }
     }
