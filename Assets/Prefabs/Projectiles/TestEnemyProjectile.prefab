@@ -155,7 +155,7 @@ MonoBehaviour:
   damage: 10
   damageLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2176
   impactEffect: {fileID: 2608564611163780605, guid: 5d8346fbb3509594fb4f6087a228d017,
     type: 3}
 --- !u!108 &3118412722835419126
