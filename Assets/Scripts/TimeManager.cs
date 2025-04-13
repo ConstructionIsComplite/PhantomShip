@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class TimeManager : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class TimeManager : MonoBehaviour
     public float InitialTimeScale => initialTimeScale;
     public float MinTimeScale => minTimeScale;
     public float CurrentTimeScale => currentTimeScale;
+    private bool isSlowDownPaused = false;
 
     void Awake()
     {
@@ -45,7 +47,7 @@ public class TimeManager : MonoBehaviour
 
     void Update()
     {
-        if (isTimeStopped) return;
+        if (isTimeStopped || isSlowDownPaused) return; // Замедление приостановлено
         if (currentTimeScale > minTimeScale)
         {
             currentTimeScale -= slowDownRate * Time.unscaledDeltaTime;
@@ -83,6 +85,7 @@ public class TimeManager : MonoBehaviour
     // Для ручного управления при необходимости
     public void SetTimeScale(float newScale)
     {
+        if (isTimeStopped) return; // Блокировка изменений во время заморозки
         currentTimeScale = Mathf.Clamp(newScale, minTimeScale, initialTimeScale);
         UpdateTimeScale();
     }
@@ -101,4 +104,6 @@ public class TimeManager : MonoBehaviour
         currentTimeScale = savedTimeScale; // Восстанавливаем сохраненное значение
         UpdateTimeScale();
     }
+
+    public void PauseSlowDown(bool pause) => isSlowDownPaused = pause;
 }

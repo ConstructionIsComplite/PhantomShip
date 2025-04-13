@@ -1226,6 +1226,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basics
       objectReference: {fileID: 0}
+    - target: {fileID: 3393410254351180503, guid: 5991246e9f4914641bd02a5b11613d0e,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393410254351180503, guid: 5991246e9f4914641bd02a5b11613d0e,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5236695663474642876, guid: 5991246e9f4914641bd02a5b11613d0e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1281,6 +1291,16 @@ PrefabInstance:
       propertyPath: timeManager
       value: 
       objectReference: {fileID: 1774855903}
+    - target: {fileID: 7896501009777890790, guid: 5991246e9f4914641bd02a5b11613d0e,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896501009777890790, guid: 5991246e9f4914641bd02a5b11613d0e,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
