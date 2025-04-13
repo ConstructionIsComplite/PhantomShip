@@ -8,18 +8,18 @@ public class EnemySoundEffectsController : MonoBehaviour
     [SerializeField]
     private AudioSource audioSource;
 
-    private void PlayerClipPlay(AudioClip clip)
+    private void EnemyClipPlay(AudioClip clip)
     {
         audioSource.PlayOneShot(clip);
     }
     
     private void OnEnable()
     { 
-        SoundEvents.PlayerCharacterEffects += PlayerClipPlay;
+        SoundEvents.EnemyEffects += EnemyClipPlay;
     }
 
     private void OnDisable()
     {
-        SoundEvents.PlayerCharacterEffects -= PlayerClipPlay;
+        SoundEvents.EnemyEffects -= EnemyClipPlay;
     }
 }
