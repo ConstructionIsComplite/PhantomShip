@@ -6,11 +6,14 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    [Header("Game Over Settings")]
-    [SerializeField] GameObject gameOverPanel;
-    [SerializeField] TMP_Text gameOverText;
+    [Header("Player Settings")]
+    [SerializeField] private PlayerMovement playerController;
 
-    private bool isGameOver = false;
+    [Header("UI Settings")]
+    [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private TMP_Text gameOverText;
+
+    private bool isGameOver;
 
     void Awake()
     {
@@ -21,40 +24,32 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            // Уничтожаем дубликаты при перезагрузке
             Destroy(gameObject);
+        }
+    }
+
+    public void PausePlayerControls(bool pause)
+    {
+        if (playerController != null)
+        {
+            playerController.enabled = !pause;
         }
     }
 
     public void TriggerGameOver(string reason)
     {
         if (isGameOver) return;
+
         isGameOver = true;
-
-        // Остановка времени через TimeManager
-        TimeManager.Instance.StopTime(); 
-
+        TimeManager.Instance.StopTime();
         Cursor.lockState = CursorLockMode.None;
-
-        // Показать UI
         gameOverPanel.SetActive(true);
         gameOverText.text = $"GAME OVER\n{reason}";
     }
 
     public void RestartLevel()
     {
-        // Удаляем DontDestroyOnLoad для текущего GameManager
-        if (Instance == this)
-        {
-            Instance = null;
-            Destroy(gameObject);
-        }
-
-        // Сброс параметров времени
         Time.timeScale = 1f;
-        TimeManager.Instance?.ResetTimeScale();
-
-        // Перезагрузка сцены
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

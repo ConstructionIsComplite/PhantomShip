@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.interpolation = RigidbodyInterpolation.Interpolate;
         rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
-        groundPlane = new Plane(Vector3.up, Vector3.zero);
+        //groundPlane = new Plane(Vector3.up, Vector3.zero);
     }
 
     void Update()
@@ -43,7 +43,6 @@ public class PlayerMovement : MonoBehaviour
     {
         HandleMovement();
         currentVelocity = rb.velocity; // Обновляем для отладки
-        HandleMovement();
     }
 
     void HandleMovement()
@@ -63,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
         targetVelocity = Vector3.MoveTowards(
             targetVelocity,
             desiredDirection * maxSpeed,
-            (desiredDirection.magnitude > 0.1f ? acceleration : deceleration) * Time.fixedDeltaTime);
+            (input.magnitude > 0.1f ? acceleration : deceleration) * Time.fixedDeltaTime);
 
         // Применяем движение
         rb.velocity = new Vector3(
