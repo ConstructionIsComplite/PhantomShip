@@ -106,7 +106,7 @@ public class Projectile : MonoBehaviour
         rb.isKinematic = true;
         rb.detectCollisions = false;
         
-        collision.gameObject.GetComponent<Health>()?.TakeDamage(damage);
+       // collision.gameObject.GetComponent<Health>()?.TakeDamage(damage);
 
         TryDamageTarget(collision.gameObject);
         Destroy(gameObject);

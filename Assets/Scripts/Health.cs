@@ -31,7 +31,7 @@ public class Health : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        //currentHealth = Mathf.Max(currentHealth, 0);
+        currentHealth = Mathf.Max(currentHealth, 0);
         UpdateUI();
         if (currentHealth <= 0) Die();
     }
