@@ -68,6 +68,7 @@ public class TimeManager : MonoBehaviour
     public void ResetTimeScale()
     {
         currentTimeScale = initialTimeScale;
+        isTimeStopped = false; // Если есть флаг остановки времени
         UpdateTimeScale();
     }
 

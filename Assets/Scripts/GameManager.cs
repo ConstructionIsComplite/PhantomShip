@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            // Уничтожаем дубликаты при перезагрузке
             Destroy(gameObject);
         }
     }
@@ -42,8 +43,18 @@ public class GameManager : MonoBehaviour
 
     public void RestartLevel()
     {
-        isGameOver = false;
+        // Удаляем DontDestroyOnLoad для текущего GameManager
+        if (Instance == this)
+        {
+            Instance = null;
+            Destroy(gameObject);
+        }
+
+        // Сброс параметров времени
         Time.timeScale = 1f;
+        TimeManager.Instance?.ResetTimeScale();
+
+        // Перезагрузка сцены
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
