@@ -3218,7 +3218,7 @@ PrefabInstance:
     - target: {fileID: 31160253312335545, guid: 3bacfaaf9170df84d8adf4ebb9fd30b8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.5447893
+      value: -2.0239801
       objectReference: {fileID: 0}
     - target: {fileID: 31160253312335545, guid: 3bacfaaf9170df84d8adf4ebb9fd30b8,
         type: 3}
@@ -3228,7 +3228,7 @@ PrefabInstance:
     - target: {fileID: 31160253312335545, guid: 3bacfaaf9170df84d8adf4ebb9fd30b8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.992854
+      value: 64.24593
       objectReference: {fileID: 0}
     - target: {fileID: 4772522295889038752, guid: 3bacfaaf9170df84d8adf4ebb9fd30b8,
         type: 3}
@@ -3290,6 +3290,11 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 7269482217096384547}
+    - target: {fileID: 5813942849825164014, guid: 3bacfaaf9170df84d8adf4ebb9fd30b8,
+        type: 3}
+      propertyPath: maxTotalAmmo
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 5813942849825164014, guid: 3bacfaaf9170df84d8adf4ebb9fd30b8,
         type: 3}
       propertyPath: projectileSpeed
