@@ -15,8 +15,8 @@ MonoBehaviour:
   pauseGameplay: 0
   freezeTime: 0
   lines:
-  - sentence: 123
+  - sentence: "\u0418\u0433\u0440\u043E\u043A: \u0427\u0442\u043E \u0437\u0430 \u0448\u0443\u043C?"
     voiceClip: {fileID: 0}
     characterPortrait: {fileID: 0}
-    displayDuration: 0
+    displayDuration: 2
     audioOnly: 0
