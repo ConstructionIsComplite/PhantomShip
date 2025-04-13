@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2c6f2b0266bab44acf82d27c574a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visionRadius: 20
+  visionRadius: 80
   visionAngle: 345
   attackRadius: 3
   patrolSpeed: 2
@@ -135,6 +135,7 @@ MonoBehaviour:
   deathEffect: {fileID: 0}
   healthSlider: {fileID: 0}
   healthText: {fileID: 0}
+  animator: {fileID: 0}
   currentHealth: 0
   isPlayer: 0
 --- !u!195 &2219872022452744271
