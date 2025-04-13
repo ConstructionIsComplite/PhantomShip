@@ -49,9 +49,15 @@ public class DialogueManager : MonoBehaviour
         preDialogueTimeScale = TimeManager.Instance.CurrentTimeScale;
         dialogueLines.Clear();
 
-        if (!dialogue.freezeTime)
+        if (dialogue.freezeTime)
         {
-            TimeManager.Instance.PauseSlowDown(true);
+            TimeManager.Instance.StopTime();
+            HideNonDialogueUI();
+        }
+        else
+        {
+            // —охран€ем текущее замедление, но не останавливаем его
+            TimeManager.Instance.PauseSlowDown(false);
         }
 
         foreach (var line in dialogue.lines)
@@ -84,15 +90,15 @@ public class DialogueManager : MonoBehaviour
         {
             var line = dialogueLines.Dequeue();
 
+            if (line.voiceClip != null)
+            {
+                audioSource.PlayOneShot(line.voiceClip);
+            }
+
             if (!line.audioOnly)
             {
                 dialoguePanel.SetActive(true);
                 yield return StartCoroutine(TypeText(line.sentence));
-            }
-
-            if (line.voiceClip != null)
-            {
-                audioSource.PlayOneShot(line.voiceClip);
             }
 
             if (line.displayDuration > 0)
@@ -140,23 +146,24 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(false);
 
         TimeManager.Instance.RestoreTime();
+
         ShowHiddenUI();
+
 
         if (GameManager.Instance != null)
         {
             GameManager.Instance.PausePlayerControls(false);
         }
 
-        isDialogueActive = false;
-        OnDialogueEnd?.Invoke();
-
-        if (currentDialogue.freezeTime)
+        if (currentDialogue != null && currentDialogue.freezeTime)
         {
             TimeManager.Instance.RestoreTime();
         }
 
-        TimeManager.Instance.SetTimeScale(preDialogueTimeScale);
-        currentDialogue = null;
+        isDialogueActive = false;
+        OnDialogueEnd?.Invoke();
+        currentDialogue = null; // —бросить текущий диалог
+        TimeManager.Instance.PauseSlowDown(false);
     }
 
     private void ShowHiddenUI()

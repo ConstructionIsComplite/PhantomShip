@@ -100,9 +100,12 @@ public class TimeManager : MonoBehaviour
 
     public void RestoreTime()
     {
+        if (!isTimeStopped) return; // Если время не было остановлено, ничего не делаем
+
         isTimeStopped = false;
-        currentTimeScale = savedTimeScale; // Восстанавливаем сохраненное значение
+        currentTimeScale = savedTimeScale;
         UpdateTimeScale();
+        Debug.Log("Время восстановлено: " + currentTimeScale); // Для отладки
     }
 
     public void PauseSlowDown(bool pause) => isSlowDownPaused = pause;
