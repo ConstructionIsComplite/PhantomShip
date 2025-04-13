@@ -20,6 +20,8 @@ public class Health : MonoBehaviour
     [SerializeField]
     private int currentHealth;
 
+    [SerializeField] bool isPlayer = false;
+
     public event System.Action<float> OnHealthChanged;
 
     void Start()
@@ -44,6 +46,11 @@ public class Health : MonoBehaviour
             Destroy(gameObject);
         else
             gameObject.SetActive(false);
+
+        if (isPlayer)
+        {
+            GameManager.Instance.TriggerGameOver("YOUR HEALTH REACHED ZERO");
+        }
     }
 
     public void Heal(int amount)

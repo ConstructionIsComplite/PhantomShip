@@ -12,6 +12,7 @@ public class TimeManager : MonoBehaviour
     [SerializeField][Range(0f, 0.1f)] float slowDownRate = 0.01f;
     [SerializeField][Range(0.01f, 1f)] float minTimeScale = 0.1f;
 
+    private bool isTimeStopped = false;
     private float currentTimeScale;
 
     public event Action<float> OnTimeScaleChanged; // Событие изменения времени
@@ -42,11 +43,18 @@ public class TimeManager : MonoBehaviour
 
     void Update()
     {
+        if (isTimeStopped) return;
         if (currentTimeScale > minTimeScale)
         {
             currentTimeScale -= slowDownRate * Time.unscaledDeltaTime;
             currentTimeScale = Mathf.Clamp(currentTimeScale, minTimeScale, initialTimeScale);
             UpdateTimeScale();
+
+            // Проверка на минимальное время
+            if (currentTimeScale <= minTimeScale)
+            {
+                GameManager.Instance.TriggerGameOver("TIME FLOW STOPPED");
+            }
         }
     }
 
@@ -67,6 +75,13 @@ public class TimeManager : MonoBehaviour
     public void SetTimeScale(float newScale)
     {
         currentTimeScale = Mathf.Clamp(newScale, minTimeScale, initialTimeScale);
+        UpdateTimeScale();
+    }
+
+    public void StopTime()
+    {
+        isTimeStopped = true;
+        currentTimeScale = 0f;
         UpdateTimeScale();
     }
 }
