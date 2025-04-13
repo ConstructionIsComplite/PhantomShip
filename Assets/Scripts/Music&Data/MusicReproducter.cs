@@ -13,8 +13,8 @@ public class MusicReproducter : MonoBehaviour
     private SoundSettingsData m_soundSettings;
     [SerializeField]
     private MusicList m_musicList;
-    //[SerializeField]
-    //private TimeManager m_timeManager;
+    [SerializeField]
+    private TimeManager m_timeManager;
     
     private List<AudioClip> m_localMusicList = new();
     
@@ -39,7 +39,7 @@ public class MusicReproducter : MonoBehaviour
     private void Update()
     {
         MusicPlayWithFading();
-        //m_audioSource.pitch = m_timeManager.TimeScale;
+        m_audioSource.pitch = m_timeManager.CurrentTimeScale;
     }
 
     private void MusicPlayWithFading()
@@ -128,8 +128,8 @@ public class MusicReproducter : MonoBehaviour
         return remainingTime <= 5f;
     }
 
-    // private void OnValidate()
-    // {
-    //     m_timeManager = FindObjectOfType<TimeManager>();
-    // }
+    private void OnValidate()
+    { 
+        m_timeManager = FindObjectOfType<TimeManager>();
+    }
 }

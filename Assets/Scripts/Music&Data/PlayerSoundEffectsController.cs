@@ -6,10 +6,17 @@ public class PlayerSoundEffectsController : MonoBehaviour
 {
     [SerializeField]
     private AudioSource audioSource;
+    [SerializeField]
+    private TimeManager timeManager;
 
     private void PlayerClipPlay(AudioClip clip)
     {
         audioSource.PlayOneShot(clip);
+    }
+
+    private void Update()
+    {
+        audioSource.pitch = timeManager.CurrentTimeScale;
     }
     
     private void OnEnable()
@@ -20,5 +27,10 @@ public class PlayerSoundEffectsController : MonoBehaviour
     private void OnDisable()
     {
         SoundEvents.PlayerCharacterEffects -= PlayerClipPlay;
+    }
+
+    private void OnValidate()
+    {
+        timeManager = FindObjectOfType<TimeManager>();
     }
 }
