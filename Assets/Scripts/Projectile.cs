@@ -37,7 +37,7 @@ public class Projectile : MonoBehaviour
         direction = new Vector3(shootDirection.x, 0, shootDirection.z).normalized;
         this.speed = projectileSpeed;
 
-        // Для kinematic rigidbody используем MovePosition
+        // пїЅпїЅпїЅ kinematic rigidbody пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ MovePosition
         if (rb.isKinematic)
         {
             StartCoroutine(KinematicMovement());
@@ -66,14 +66,14 @@ public class Projectile : MonoBehaviour
     {
         if (rb.isKinematic)
         {
-            // Для kinematic движения обновляем позицию
+            // пїЅпїЅпїЅ kinematic пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             Vector3 newPos = transform.position + direction * speed * Time.fixedDeltaTime;
             newPos.y = initialY;
             rb.MovePosition(newPos);
         }
         else
         {
-            // Оригинальная физическая логика
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
             Vector3 currentVelocity = rb.velocity;
             currentVelocity.y = 0;
             rb.velocity = currentVelocity.normalized * speed;
@@ -87,11 +87,11 @@ public class Projectile : MonoBehaviour
     /*
     void OnTriggerEnter(Collider other)
     {
-        // Нанесение урона
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
         Health health = other.GetComponent<Health>();
         if (health) health.TakeDamage(damage);
 
-        // Эффекты и уничтожение снаряда
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         ProcessCollision(other.gameObject);
         Destroy(gameObject);
     }
@@ -102,9 +102,11 @@ public class Projectile : MonoBehaviour
         ContactPoint contact = collision.contacts[0];
         SpawnImpactEffect(contact.point, contact.normal);
 
-        // Полностью отключаем физику снаряда
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         rb.isKinematic = true;
         rb.detectCollisions = false;
+        
+        collision.gameObject.GetComponent<Health>()?.TakeDamage(damage);
 
         TryDamageTarget(collision.gameObject);
         Destroy(gameObject);
@@ -114,7 +116,7 @@ public class Projectile : MonoBehaviour
 
     void ProcessCollision(GameObject target)
     {
-        SpawnImpactEffect(target.transform.position); // Передаём позицию цели
+        SpawnImpactEffect(target.transform.position); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
         TryDamageTarget(target);
     }
     */
@@ -125,7 +127,7 @@ public class Projectile : MonoBehaviour
 
         Instantiate(
             impactEffect,
-            position, // Используем позицию столкновения
+            position, // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             Quaternion.identity
         );
     }
@@ -138,7 +140,7 @@ public class Projectile : MonoBehaviour
         Instantiate(
             impactEffect,
             position,
-            Quaternion.LookRotation(normal) // Используем переданную нормаль
+            Quaternion.LookRotation(normal) // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         );
     }
 

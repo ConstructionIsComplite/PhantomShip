@@ -9,5 +9,7 @@ public class HealthPickup : PickupItem
     {
         Health health = player.GetComponent<Health>();
         if (health) health.Heal(healAmount);
+        
+        SoundEvents.OnPlayerCharacterEffect(pickupSound);
     }
 }

@@ -14,5 +14,7 @@ public class ChronoChargePickup : PickupItem
                 1f
             )
         );
+        
+        SoundEvents.OnPlayerCharacterEffect(pickupSound);
     }
 }

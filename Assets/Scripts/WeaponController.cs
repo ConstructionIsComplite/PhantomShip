@@ -11,6 +11,8 @@ public class WeaponController : MonoBehaviour
     [Header("Shooting Settings")]
     [SerializeField] Transform firePoint;
     [SerializeField] GameObject projectilePrefab;
+    [SerializeField] AudioClip fireSound;
+    [SerializeField] AudioClip reloadSound;
     [SerializeField] float fireRate = 0.2f;
     [SerializeField] float projectileSpeed = 25f;
 
@@ -79,6 +81,8 @@ public class WeaponController : MonoBehaviour
         );
 
         projectile.GetComponent<Projectile>().Initialize(shootDirection, projectileSpeed);
+        
+        SoundEvents.OnPlayerCharacterEffect(fireSound);
     }
 
     Vector3 CalculateShootDirection()
@@ -100,6 +104,7 @@ public class WeaponController : MonoBehaviour
     {
         if (!isReloading && NeedsReload() && HasAmmoToReload())
         {
+            SoundEvents.OnPlayerCharacterEffect(reloadSound);
             isReloading = true;
             reloadTimer = 0f;
             OnReloadStart?.Invoke();

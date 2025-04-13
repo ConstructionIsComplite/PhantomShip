@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 90
   pickupEffect: {fileID: 0}
-  pickupSound: {fileID: 0}
+  pickupSound: {fileID: 8300000, guid: 230baafa0631d404794c120fcf49c6f9, type: 3}
   timeRestoreAmount: 1
 --- !u!108 &6813464989779783776
 Light:

@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 90
   pickupEffect: {fileID: 0}
-  pickupSound: {fileID: 0}
+  pickupSound: {fileID: 8300000, guid: cbccc2815bff219419c9b968461426f3, type: 3}
   ammoAmount: 30
 --- !u!108 &7017758604983250548
 Light:

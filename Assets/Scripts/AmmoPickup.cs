@@ -9,5 +9,7 @@ public class AmmoPickup : PickupItem
     {
         WeaponController weapon = player.GetComponentInChildren<WeaponController>();
         if (weapon) weapon.AddAmmo(ammoAmount);
+        
+        SoundEvents.OnPlayerCharacterEffect(pickupSound);
     }
 }

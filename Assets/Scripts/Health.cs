@@ -16,7 +16,8 @@ public class Health : MonoBehaviour
     [Header("UI References")]
     [SerializeField] Slider healthSlider;
     [SerializeField] TMP_Text healthText;
-
+    
+    [SerializeField]
     private int currentHealth;
 
     public event System.Action<float> OnHealthChanged;
@@ -30,7 +31,7 @@ public class Health : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        currentHealth = Mathf.Max(currentHealth, 0);
+        //currentHealth = Mathf.Max(currentHealth, 0);
         UpdateUI();
         if (currentHealth <= 0) Die();
     }
@@ -55,15 +56,15 @@ public class Health : MonoBehaviour
     {
         float healthPercentage = (float)currentHealth / maxHealth;
 
-        // Обновление Slider
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ Slider
         if (healthSlider)
             healthSlider.value = healthPercentage;
 
-        // Обновление Text
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ Text
         if (healthText)
             healthText.text = $"HP: {currentHealth}/{maxHealth}";
 
-        // Вызов события
+        // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         OnHealthChanged?.Invoke(healthPercentage);
     }
 }

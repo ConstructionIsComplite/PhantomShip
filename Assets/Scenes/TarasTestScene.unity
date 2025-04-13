@@ -432,6 +432,7 @@ MonoBehaviour:
   deathEffect: {fileID: 0}
   healthSlider: {fileID: 0}
   healthText: {fileID: 0}
+  currentHealth: 0
 --- !u!1 &585337818
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,6 +650,7 @@ MonoBehaviour:
   deathEffect: {fileID: 0}
   healthSlider: {fileID: 0}
   healthText: {fileID: 0}
+  currentHealth: 0
 --- !u!65 &834086473
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1693,6 +1695,21 @@ PrefabInstance:
     - target: {fileID: 5352795441409387868, guid: 5991246e9f4914641bd02a5b11613d0e,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7262474963908807050, guid: 5991246e9f4914641bd02a5b11613d0e,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7262474963908807050, guid: 5991246e9f4914641bd02a5b11613d0e,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7262474963908807050, guid: 5991246e9f4914641bd02a5b11613d0e,
+        type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7773262381875228164, guid: 5991246e9f4914641bd02a5b11613d0e,
