@@ -14,9 +14,11 @@ public class TimeManager : MonoBehaviour
 
     private bool isTimeStopped = false;
     private float currentTimeScale;
+    private float savedTimeScale;
 
     public event Action<float> OnTimeScaleChanged; // Событие изменения времени
 
+    public bool IsTimeStopped => isTimeStopped;
     public float InitialTimeScale => initialTimeScale;
     public float MinTimeScale => minTimeScale;
     public float CurrentTimeScale => currentTimeScale;
@@ -65,6 +67,12 @@ public class TimeManager : MonoBehaviour
         OnTimeScaleChanged?.Invoke(currentTimeScale); // Вызов события
     }
 
+    public void RestorePreviousTimeScale()
+    {
+        currentTimeScale = Mathf.Clamp(currentTimeScale, minTimeScale, initialTimeScale);
+        UpdateTimeScale();
+    }
+
     public void ResetTimeScale()
     {
         currentTimeScale = initialTimeScale;
@@ -81,8 +89,16 @@ public class TimeManager : MonoBehaviour
 
     public void StopTime()
     {
+        savedTimeScale = currentTimeScale; // Сохраняем текущее значение
         isTimeStopped = true;
         currentTimeScale = 0f;
+        UpdateTimeScale();
+    }
+
+    public void RestoreTime()
+    {
+        isTimeStopped = false;
+        currentTimeScale = savedTimeScale; // Восстанавливаем сохраненное значение
         UpdateTimeScale();
     }
 }
