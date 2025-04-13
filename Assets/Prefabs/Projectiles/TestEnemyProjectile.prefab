@@ -155,7 +155,7 @@ MonoBehaviour:
   damage: 10
   damageLayers:
     serializedVersion: 2
-    m_Bits: 2176
+    m_Bits: 0
   impactEffect: {fileID: 2608564611163780605, guid: 5d8346fbb3509594fb4f6087a228d017,
     type: 3}
 --- !u!108 &3118412722835419126
@@ -170,8 +170,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0, g: 0.9903991, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 10
+  m_Intensity: 10
+  m_Range: 2.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -204,12 +204,12 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 1
+  m_RenderMode: 2
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
