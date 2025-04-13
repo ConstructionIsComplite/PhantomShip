@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6632426382665714594}
   - component: {fileID: 2473204533972352507}
   - component: {fileID: 910965663997659484}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: DialogueTriggerZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
