@@ -26,7 +26,7 @@ public class TimeScaleUI : MonoBehaviour
 
         if (timeScaleText)
         {
-            timeScaleText.text = $"TIME FLOW: {currentScale * 100:F0}%";
+            timeScaleText.text = $"Течение времени: {currentScale * 100:F0}%";
             timeScaleText.fontStyle = currentScale <= 0.3f ?
                 FontStyles.Bold | FontStyles.Italic :
                 FontStyles.Normal;

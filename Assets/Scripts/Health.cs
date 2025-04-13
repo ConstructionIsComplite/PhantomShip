@@ -72,7 +72,7 @@ public class Health : MonoBehaviour
 
         // ���������� Text
         if (healthText)
-            healthText.text = $"HP: {currentHealth}/{maxHealth}";
+            healthText.text = $"Здоровье: {currentHealth}/{maxHealth}";
 
         // ����� �������
         OnHealthChanged?.Invoke(healthPercentage);
