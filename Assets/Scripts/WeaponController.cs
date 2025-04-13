@@ -21,6 +21,9 @@ public class WeaponController : MonoBehaviour
     [SerializeField] int maxTotalAmmo = 150;
     [SerializeField] float reloadTime = 1.5f;
 
+    [Header("Animation")]
+    [SerializeField] Animator animator;
+
     [Header("Events")]
     public AmmoEvent OnMagazineChanged = new AmmoEvent();
     public AmmoEvent OnTotalAmmoChanged = new AmmoEvent();
@@ -73,6 +76,7 @@ public class WeaponController : MonoBehaviour
 
     void Shoot()
     {
+        animator.SetTrigger("Attack");
         Vector3 shootDirection = CalculateShootDirection();
         GameObject projectile = Instantiate(
             projectilePrefab,

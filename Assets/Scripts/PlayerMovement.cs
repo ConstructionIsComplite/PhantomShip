@@ -19,6 +19,9 @@ public class PlayerMovement : MonoBehaviour
     [Header("Debug")]
     [SerializeField] Vector3 currentVelocity; // Для визуализации в инспекторе
 
+    [Header("Animation")]
+    [SerializeField] Animator animator;
+
     public Vector3 CurrentVelocity => rb.velocity;
 
     Rigidbody rb;
@@ -70,6 +73,10 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity.y, // Сохраняем вертикальную скорость для гравитации
             targetVelocity.z
         );
+
+        float speedNormalized = rb.velocity.magnitude / maxSpeed;
+        animator.SetFloat("Speed", speedNormalized);
+        animator.SetBool("Aiming", speedNormalized < 0.1f); // Aiming = Idle
 
     }
 

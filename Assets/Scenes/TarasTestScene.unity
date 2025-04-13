@@ -364,6 +364,7 @@ MonoBehaviour:
   deathEffect: {fileID: 0}
   healthSlider: {fileID: 0}
   healthText: {fileID: 0}
+  animator: {fileID: 0}
   currentHealth: 0
   isPlayer: 0
 --- !u!1 &585337818
@@ -508,6 +509,7 @@ MonoBehaviour:
   deathEffect: {fileID: 0}
   healthSlider: {fileID: 0}
   healthText: {fileID: 0}
+  animator: {fileID: 0}
   currentHealth: 0
   isPlayer: 0
 --- !u!65 &834086473
@@ -1221,25 +1223,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1015731095117043574, guid: 5991246e9f4914641bd02a5b11613d0e,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 900
-      objectReference: {fileID: 0}
     - target: {fileID: 1131058553151357276, guid: 5991246e9f4914641bd02a5b11613d0e,
         type: 3}
       propertyPath: m_Name
       value: Basics
-      objectReference: {fileID: 0}
-    - target: {fileID: 1606089286488451065, guid: 5991246e9f4914641bd02a5b11613d0e,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 900
-      objectReference: {fileID: 0}
-    - target: {fileID: 2717124027433548517, guid: 5991246e9f4914641bd02a5b11613d0e,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 3393410254351180503, guid: 5991246e9f4914641bd02a5b11613d0e,
         type: 3}
@@ -1250,16 +1237,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3942175929449234838, guid: 5991246e9f4914641bd02a5b11613d0e,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -700
-      objectReference: {fileID: 0}
-    - target: {fileID: 3942175929449234838, guid: 5991246e9f4914641bd02a5b11613d0e,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 5236695663474642876, guid: 5991246e9f4914641bd02a5b11613d0e,
         type: 3}
@@ -1316,26 +1293,6 @@ PrefabInstance:
       propertyPath: timeManager
       value: 
       objectReference: {fileID: 1774855903}
-    - target: {fileID: 5989885622465426996, guid: 5991246e9f4914641bd02a5b11613d0e,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 580
-      objectReference: {fileID: 0}
-    - target: {fileID: 7369830306977364236, guid: 5991246e9f4914641bd02a5b11613d0e,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -700
-      objectReference: {fileID: 0}
-    - target: {fileID: 7369830306977364236, guid: 5991246e9f4914641bd02a5b11613d0e,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 440
-      objectReference: {fileID: 0}
-    - target: {fileID: 7836919800019994183, guid: 5991246e9f4914641bd02a5b11613d0e,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 80
-      objectReference: {fileID: 0}
     - target: {fileID: 7896501009777890790, guid: 5991246e9f4914641bd02a5b11613d0e,
         type: 3}
       propertyPath: m_AnchorMax.x
