@@ -36,8 +36,14 @@ public abstract class EnemyBase : MonoBehaviour
     protected virtual void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        playerHealth = player.GetComponent<Health>();
+        agent = GetComponent<NavMeshAgent>();
+
+        var playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj != null)
+        {
+            player = playerObj.transform;
+            playerHealth = player.GetComponent<Health>();
+        }
 
         if (patrolPoints.Length > 0)
             agent.SetDestination(patrolPoints[0].position);
@@ -45,6 +51,12 @@ public abstract class EnemyBase : MonoBehaviour
 
     protected virtual void Update()
     {
+        if (player == null || playerHealth == null || playerHealth.IsDead)
+        {
+            currentState = AIState.Patrol;
+            return;
+        }
+
         visionUpdateTimer -= Time.deltaTime;
         if (visionUpdateTimer <= 0)
         {
@@ -88,6 +100,8 @@ public abstract class EnemyBase : MonoBehaviour
 
     protected bool CheckPlayerVisibility()
     {
+        if (player == null || playerHealth == null || playerHealth.IsDead) return false;
+
         Vector3 directionToPlayer = player.position - transform.position;
         float distanceToPlayer = directionToPlayer.magnitude;
 

@@ -24,6 +24,8 @@ public class Health : MonoBehaviour
 
     public event System.Action<float> OnHealthChanged;
 
+    public bool IsDead { get; private set; }
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -40,6 +42,7 @@ public class Health : MonoBehaviour
 
     private void Die()
     {
+        IsDead = true;
         if (deathEffect) Instantiate(deathEffect, transform.position, Quaternion.identity);
 
         if (destroyOnDeath)
